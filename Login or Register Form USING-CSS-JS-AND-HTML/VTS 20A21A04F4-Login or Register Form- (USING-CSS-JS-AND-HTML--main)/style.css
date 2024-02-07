@@ -1,0 +1,341 @@
+/*-----------------  GOOGLE FONTS  -----------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600&display=swap');
+
+/*-----------------  VARIABLES  -----------------*/
+:root {
+    /* Colors */ 
+    --skyblue-color: rgba(3, 234, 255, 0.885);
+    --white_color: rgb(255, 255, 255);
+    --linear_gradient: linear-gradient(rgba(1, 1, 2, 0),rgba(97, 83, 83, 0));
+    --black_color: rgb(255, 255, 255);
+    --success_color: rgb(4, 255, 4);
+    --danger_color: rgb(255, 71, 71);
+}
+html {
+    font-size: 10px;
+    /* Now 1rem = 10px */
+}
+/*-----------------  Base  -----------------*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+/*-----------------  Styling Start  -----------------*/
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background-image:var(--linear_gradient),url(background.jpg);
+    background-position: center;
+    background-size: cover;
+    transition: 0.5s ease;
+    transform-style: preserve-3d;
+    perspective: 100rem;
+}
+.form_box {
+    width: 38rem;
+    height: 55rem;
+    margin: 6% auto;
+    padding: 0.5rem;
+    color: var(--white_color);
+    border: 0.1rem solid rgba(255, 255, 255, 0.353);
+    background:rgba(255, 255, 255, 0.175);
+    border-radius: 1.6rem;
+    box-shadow: 0 0.4rem 3rem rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0.5rem);
+    overflow: hidden;
+}
+.btn_box {
+    width: 22rem;
+    margin: 3.5rem auto;
+    position: relative;
+    box-shadow: 0 0 2rem 0.9rem #1b1f2955;
+    border-radius: 3rem;
+}
+.toggle_btn {
+    padding: 1rem 3rem;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    transition: 0.3s;
+    font-weight: 600;
+}
+.toggle_btn:hover {
+    color: var(--white_color);
+}
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 11rem;
+    height: 100%;
+    border-radius: 3rem;
+    background:var(--skyblue-color);
+    transition: 0.5s;
+    font-weight: 600;
+}
+.social_icons {
+    text-align: center;
+}
+.social_icons .icon {
+    width: 3.6rem;
+    height: 3.6rem;
+    margin: 0 1.2rem;
+    font-size: 1.6rem;
+    box-shadow: 0 0 2rem 0.9rem #1b1f2955;
+    cursor: pointer;
+    border-radius: 50%;
+    color: var(--black_color);
+    padding-top: 1rem;
+    background: transparent;
+    transition: 0.2s;
+}
+.social_icons .icon:hover {
+    background: var(--skyblue-color);
+    color: var(--white_color);
+}
+.form_div {
+    width: 100%;
+    margin-top: 2rem;
+    position: relative;
+    height: 4.8rem;
+    margin-bottom: 2.4rem;
+}
+.input_group {
+    top: 18rem;
+    position: absolute;
+    width: 28rem;
+    transition: 0.5s;
+}
+.form_input {
+    font-size: 1.6rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    box-shadow: 0 0 2rem 0.9rem #1b1f2955;
+    border-radius: 0.8rem;
+    outline: none;
+    padding: 1.6rem;
+    background: transparent;
+    z-index: 1;
+    transition: 0.3s;
+}
+.form_label {
+    position: absolute;
+    left: 1.6rem;
+    top: 1.6rem;
+    padding: 0 0.4rem;
+    background-color: transparent;
+    color: var(--black_color);
+    font-size: 1.6rem;
+    transition: 0.3s;
+}
+.form_input:focus + .form_label {
+    top: -0.8rem;
+    left: 1rem;
+    color: var(--white_color);
+    font-size: 1rem;
+    font-weight: 500;
+    z-index: 10;
+    background-color: var(--skyblue-color);
+    border-radius: 1rem;
+    padding: 0 0.5rem;
+}
+.form_input:not(:placeholder-shown).form_input:not(:focus)+ .form_label {
+    top: -0.8rem;
+    left: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: var(--skyblue-color);
+    border-radius: 1rem;
+    color: var(--white_color);
+    z-index: 10;
+}
+.form_input:focus {
+    border: 0.15rem solid var(--skyblue-color);
+}
+.submit_btn {
+    width: 85%;
+    position: relative;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background-color:transparent;
+    box-shadow: 0 0 2rem 0.9rem #1b1f2955;
+    border: 0;
+    outline: none;
+    overflow: hidden;
+    font-weight: 600;
+    border-radius: 3rem;
+    transition: 0.5s;
+}
+.submit_btn:hover {
+    color: var(--white_color);
+    background-color: var(--skyblue-color);
+}
+.submit_btn span {
+    position: absolute;
+    background: var(--white_color);
+    transform:translate(-50%, -50%);
+    border-radius: 50%;
+    animation: btnAnim 1s linear infinite;
+}
+@keyframes btnAnim {
+    0%{
+        width: 0rem;
+        height: 0rem;
+        opacity: 1;
+    }
+    100%{
+        width: 50rem;
+        height: 50rem;
+        opacity: 0;
+    }
+}
+.checkbox {
+    margin: 2rem 1rem 3rem 0.5rem;
+    box-shadow: 0 0 2rem 0.5rem #1b1f2955;
+    accent-color: var(--success_color);
+    cursor: pointer;
+}
+.check_text {
+    color: var(--black_color);
+    font-size: 1.2rem;
+    bottom: 6.8rem;
+    position: absolute;
+}
+#login {
+    left: 5rem;
+}
+#register {
+    left: 45rem;
+}
+.error-msg {
+    display: block;
+    position: relative;
+    font-size: 1.4rem;
+    padding-left: 0.5rem;   
+}
+.danger-color {
+    color: var(--danger_color);
+}
+.error {
+    border-color: var(--danger_color);
+}
+.valid {
+    color: var(--success_color);
+}
+.hide {
+    display: none;
+}
+.showbtn {
+    position: absolute;
+    right: 1rem;
+    top: 0.8rem;
+    width: 3.4rem;
+    font-size: 1.6rem;
+    color: var(--black_color);
+    height: 3.4rem;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+.password_validation {
+    margin-top: 1.5rem;
+}
+.password_validation ul li {
+    list-style: none;
+    color: var(--black_color);
+    font-size: 1.4rem;
+    padding-left: 0.5rem;   
+}
+.password_validation ul li.valid {
+    color: var(--white_color);
+}
+.password_validation ul li::before {
+    content:'\f192';
+    font-family: fontAwesome;
+    width: 2rem;
+    height: 1rem;
+    display: inline-flex;
+}
+.password_validation ul li.valid::before {
+    content: '\f00c';
+    color: var(--success_color);
+} 
+.popup {
+    width: 30rem;
+    background-color: var(--white_color);
+    border-radius: 1rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 3rem 3rem;
+    color: var(--black_color);
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+.popup .valicon {
+    font-size: 4rem;
+    height: 6rem;
+    width: 6rem;
+    padding: 1rem;
+    margin-top: -3rem;
+    color: var(--white_color);
+    background-color: var(--success_color);
+    border-radius: 50%;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+.popup .erroricon {
+    font-size: 4rem;
+    height: 6rem;
+    width: 6rem;
+    padding: 1rem;
+    margin-top: -3rem;
+    color: var(--white_color);
+    background-color: var(--danger_color);
+    border-radius: 50%;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+.popup h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin: 3rem 0 1rem;
+}
+.popup .ok_btn {
+    margin-top: 3rem;
+    width: 100%;
+    padding: 1rem 0;
+    background-color: var(--success_color);
+    color: var(--white_color);
+    border: 0;
+    outline: none;
+    font-size: 1.8rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+.open_popup {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+ 

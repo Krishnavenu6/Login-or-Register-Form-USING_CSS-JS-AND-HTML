@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register Form</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" 
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div class="container">
+        <div class="form_box">
+            <!-- Toggle Buttons For Login & Register Form -->
+            <div class="btn_box">
+                <div id="btn"></div>
+                <button type="button" class="toggle_btn" onclick="login()">Log in</button>
+                <button type="button" class="toggle_btn" onclick="register()">Register</button>
+            </div>
+            <!-- Social Icons -->
+            <div class="social_icons">
+                <a href="https://www.google.com"><i class="fa-brands fa-google icon"></i></a>
+                <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f icon"></i></a>
+                <a href="https://twitter.com/"><i class="fa-brands fa-twitter icon"></i></a>
+                <a href="https://github.com/"><i class="fa-brands fa-github icon"></i></a>
+            </div>
+            <!-- Login Form -->
+            <form id="login" class="input_group">
+                <div class="form_div">
+                    <input type="text" class="form_input" placeholder=" " autocomplete="off" required>
+                    <label for="" class="form_label">User Name </label>
+                </div>
+                <div class="form_div">
+                    <input type="password" class="form_input" placeholder=" " autocomplete="off" required>
+                    <label for="" class="form_label">Password</label>
+                </div>
+                <input type="checkbox" class="checkbox"><span class="check_text">Remember Password</span>
+                <button type="submit" class="submit_btn">Log in</button>
+            </form>
+            <!-- Register Form -->
+            <form id="register" class="input_group">
+                <div class="form_div">
+                    <input type="text" class="form_input" placeholder=" " autocomplete="off" required>
+                    <label for="" class="form_label">User Name</label>
+                    <span id="user_name_error" class="hide danger-color error-msg">Invalid Input</span>
+                    <span id="user_name_empty" class="hide danger-color error-msg">User Name Can not Be Empty</span>
+                </div>
+                <div class="form_div">
+                    <input type="text" class="form_input" placeholder=" " autocomplete="off" required>
+                    <label for="" class="form_label">Email</label>
+                    <span id="email_error" class="hide danger-color error-msg">Invalid Email</span>
+                    <span id="email_empty" class="hide danger-color error-msg">Email Can not Be Empty</span>
+                </div>
+                <div class="form_div">
+                    <input type="text" class="form_input" placeholder=" " autocomplete="off" required>
+                    <label for="" class="form_label">Phone</label>
+                    <span id="phone_error" class="hide danger-color error-msg">Phone Number Should Have 10 Digits</span>
+                    <span id="phone_empty" class="hide danger-color error-msg">Phone Can not Be Empty</span>
+                </div>
+                <div class="form_div">
+                    <input type="password" id="password_input" class="form_input" onkeyup="passwordvalidation(this.value)" placeholder=" " autocomplete="off" required>
+                    <label for="password_input" class="form_label">Password</label>
+                    <!-- Password Hide & Show Icon -->
+                    <span class="showbtn"><i id="showbtn" class="fa-solid fa-eye"></i></span>
+                </div>
+                <span id="password_error" class="hide danger-color error-msg">Password Should Have Letters, Special Symbols & Numbers</span>
+                <span id="password_empty" class="hide danger-color error-msg">Password Can not Be Empty</span>
+                <!-- Password Validation -->
+                <div class="password_validation">
+                    <ul>
+                        <li id="lowChar">At least one lowercase chracter</li>
+                        <li id="upChar">At least one uppercase chracter</li>
+                        <li id="number">At least one number</li>
+                        <li id="speChar">At least one special chracter</li>
+                        <li id="eigChar">At least 8 chracters</li>
+                    </ul>
+                </div>
+                <!-- End Password Validation -->
+                <input type="checkbox" class="checkbox"><span class="check_text">I agree to the terms & conditions</span>
+                <button type="submit" id="submit_btn" class="submit_btn">Register</button>              
+            </form>
+            <!-- End Register Form -->
+        </div>
+        <!-- Success & Error Popup -->
+            <div class="popup" id="Valpopup">
+             <i class="fa-sharp fa-solid fa-check valicon"></i>
+             <h2>Register Successfully!</h2>
+             <button class="ok_btn" type="button" onclick="closevalPopup()">OK</button>
+             </div>
+             <div class="popup" id="errorpopup">
+             <i class="fa-sharp fa-solid fa-check valicon"></i>
+             <h2>Register Successfully!</h2>
+             <button class="ok_btn" type="button" onclick="closeerrorPopup()">OK</button>
+            </div>
+         <!-- End Success & Error Popup -->
+    </div>
+    <!-- SCRIPT -->
+    <script src="script.js"></script> 
+</body>
+</html>
